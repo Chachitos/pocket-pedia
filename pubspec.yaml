@@ -1,0 +1,33 @@
+name: pocketpedia
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1
+  persistent_bottom_nav_bar: ^6.2.1
+  provider: ^6.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  assets:
+    - assets/docs.png
+    - assets/logo.png
+    - assets/externals/apple.png
+    - assets/externals/facebook.png
+    - assets/externals/google.png
+    - assets/material/login_divider.png
+    - assets/navbar/cart.png
+    - assets/navbar/home.png
+    - assets/navbar/search.png
+    - assets/navbar/user.png
+  uses-material-design: true
