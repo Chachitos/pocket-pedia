@@ -3,7 +3,6 @@ import 'package:pocketpedia/pages/login/welcome.dart';
 import 'package:pocketpedia/styles/theme_provider.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
   runApp(
     ChangeNotifierProvider(
@@ -19,8 +18,6 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: Provider.of<ThemeProvider>(context).themeData,
-      home: Welcome()
-    );
+        theme: Provider.of<ThemeProvider>(context).themeData, home: Welcome());
   }
 }
