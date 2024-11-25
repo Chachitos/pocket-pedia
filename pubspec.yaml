@@ -19,6 +19,11 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 flutter:
+
+  fonts:
+  - family: Raleway
+    fonts: 
+    - asset: assets/DMSans.ttf
   assets:
     - assets/docs.png
     - assets/logo.png
@@ -30,4 +35,29 @@ flutter:
     - assets/navbar/home.png
     - assets/navbar/search.png
     - assets/navbar/user.png
+    - assets/vectors/asthma_vector.png
+    - assets/vectors/blue_doctors_vector.png
+    - assets/vectors/circulatorysys_vector.png
+    - assets/vectors/dna_vector.png
+    - assets/vectors/infection_vector.png
+    - assets/vectors/studycell_vector.png
+    - assets/vectors/vaccine_vector.png
+    - assets/vectors/biblioteca/human_11061092.png
+    - assets/vectors/biblioteca/human_11847175.png
+    - assets/vectors/biblioteca/stroke_11916674.png
+    - assets/vectors/biblioteca/tissue_11916635.png
+    - assets/vectors/secciones/biology.png
+    - assets/vectors/secciones/pharynx.png
+    - assets/vectors/secciones/pills.png
+    - assets/vectors/secciones/torso.png
+    - assets/icons/navbar/book.png
+    - assets/icons/navbar/home.png
+    - assets/icons/navbar/search.png
+    - assets/icons/navbar/user.png
+
+
+
   uses-material-design: true
+
+  
+
