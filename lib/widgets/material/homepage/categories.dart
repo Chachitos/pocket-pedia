@@ -14,36 +14,54 @@ class CategoryButton extends StatefulWidget {
 
 Map<String, Map<String, dynamic>> stylesList = {
   'Congénitas': {
-    "Path": 'Path',
-    "Color": Colors.black,
+    "Path": 'assets/vectors/secciones/biology.png',
+    "Color": AppColors.transparentTeal,
   },
-  'Alérgicas': {"Path": 'path', "Color": Colors.amberAccent},
-  'Infecciosas': {"Path": 'path', "Color": Colors.amberAccent},
-  'Otras': {"Path": 'path', "Color": Colors.amberAccent}
+  'Alérgicas': {
+    "Path": 'assets/vectors/secciones/pharynx.png',
+    "Color": AppColors.transparentBlue
+  },
+  'Infecciosas': {
+    "Path": 'assets/vectors/secciones/pills.png',
+    "Color": AppColors.transparentRed
+  },
+  'Otras': {
+    "Path": 'assets/vectors/secciones/torso.png',
+    "Color": AppColors.transparentYellow
+  }
 };
 
 class _CategoryButtonState extends State<CategoryButton> {
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-        highlightElevation: 5,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        color: stylesList[widget.name]?["Color"],
-        minWidth: 50,
-        height: 120,
-        onPressed: () {},
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Image.asset(
-              stylesList[widget.name]?["Path"],
-              height: 65,
-            ),
-            Text(
-              widget.name,
-              style: TextStyle(color: Colors.black),
-            )
-          ],
-        ));
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: MaterialButton(
+          highlightElevation: 5,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          color: stylesList[widget.name]?["Color"],
+          minWidth: 110,
+          height: 120,
+          onPressed: () {},
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                stylesList[widget.name]?["Path"],
+                height: 65,
+                width: 80,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                widget.name,
+                style: TextStyle(color: Colors.black),
+              )
+            ],
+          )),
+    );
   }
 }

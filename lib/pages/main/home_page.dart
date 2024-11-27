@@ -18,7 +18,21 @@ class HomePage extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          CategoryButton(name: 'Congénitas'),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              height: 150,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  CategoryButton(name: 'Congénitas'),
+                  CategoryButton(name: 'Alérgicas'),
+                  CategoryButton(name: 'Infecciosas'),
+                  CategoryButton(name: 'Otras'),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
