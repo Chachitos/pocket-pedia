@@ -21,7 +21,7 @@ dev_dependencies:
 flutter:
 
   fonts:
-  - family: Raleway
+  - family: DMSans
     fonts: 
     - asset: assets/DMSans.ttf
   assets:
