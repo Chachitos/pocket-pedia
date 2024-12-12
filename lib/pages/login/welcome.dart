@@ -18,8 +18,11 @@ class Welcome extends StatelessWidget {
                 color: Theme.of(context).colorScheme.primary,
               ),
               height: MediaQuery.of(context).size.height * 0.55,
-              child:  Center(
-                child: Image.asset("assets/docs.png", height: 350,),
+              child: Center(
+                child: Image.asset(
+                  "assets/docs.png",
+                  height: 350,
+                ),
               ),
             ),
             const SizedBox(
@@ -52,12 +55,13 @@ class Welcome extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.w400)),
             ),
-
             const SizedBox(
               height: 30,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15,),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+              ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -66,15 +70,16 @@ class Welcome extends StatelessWidget {
                     height: 50,
                     width: 150,
                     child: TextButton(
-                      
                       onPressed: () {
-                        Navigator.push(context, 
-                        MaterialPageRoute(builder: (context) => LoginPage())
-                        );
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()));
                         // Acción para "Acceder"
                       },
                       style: TextButton.styleFrom(
-                        backgroundColor: Theme.of(context).colorScheme.secondary,
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondary,
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),

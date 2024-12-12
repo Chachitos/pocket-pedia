@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:pocketpedia/styles/app_colors.dart';
 import 'package:pocketpedia/widgets/material/homepage/categories.dart';
 import 'package:pocketpedia/widgets/material/homepage/recents.dart';
 

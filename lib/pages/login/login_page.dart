@@ -1,7 +1,5 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pocketpedia/pages/main/home_page.dart';
 import 'package:pocketpedia/widgets/app_navbar.dart';
 import 'package:pocketpedia/widgets/material/app_text_field.dart';
 import 'package:pocketpedia/widgets/material/main_button.dart';

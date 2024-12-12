@@ -29,7 +29,8 @@ class MainButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (onPressed != null && navigateTo != null) {
-      throw Exception('You cannot provide both onPressed and navigateTo parameters at the same time.');
+      throw Exception(
+          'You cannot provide both onPressed and navigateTo parameters at the same time.');
     }
     return ElevatedButton(
       onPressed: () {
@@ -43,8 +44,10 @@ class MainButton extends StatelessWidget {
         }
       },
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(backgroundColor ?? Theme.of(context).colorScheme.secondary),
-        minimumSize: MaterialStateProperty.all(minimumSize ?? const Size(double.infinity, 50)),
+        backgroundColor: MaterialStateProperty.all(
+            backgroundColor ?? Theme.of(context).colorScheme.secondary),
+        minimumSize: MaterialStateProperty.all(
+            minimumSize ?? const Size(double.infinity, 50)),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius ?? 12),

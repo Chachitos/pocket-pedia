@@ -41,7 +41,6 @@ class _AppNavbarState extends State<AppNavbar> {
       ),
       PersistentBottomNavBarItem(
         icon: Container(
-          
           padding:
               EdgeInsets.all(8), // Espacio interno entre la imagen y el borde
           decoration: BoxDecoration(

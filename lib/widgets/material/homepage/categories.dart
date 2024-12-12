@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:pocketpedia/styles/app_colors.dart';
 
