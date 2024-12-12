@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pocketpedia/styles/app_colors.dart';
+import 'package:pocketpedia/styles/color/app_colors.dart';
 
 class CategoryButton extends StatefulWidget {
   final String name;

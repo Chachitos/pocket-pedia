@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pocketpedia/widgets/app_navbar.dart';
 import 'package:pocketpedia/widgets/material/app_text_field.dart';
 import 'package:pocketpedia/widgets/material/main_button.dart';
@@ -12,6 +11,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
@@ -20,47 +21,39 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 50),
-            // App Logo
             Image.asset(
-              'assets/logo.png', // replace with your logo URL or local asset
+              'assets/logo.png', 
               height: 100,
             ),
             const SizedBox(height: 24),
 
-            // Greeting Text
             Text(
               '¡Hola de nuevo!',
-              style: GoogleFonts.dmSans(
-                  fontSize: 32,
-                  color: const Color.fromARGB(255, 28, 28, 28),
-                  fontWeight: FontWeight.bold),
+              style: textTheme.displayLarge, 
             ),
             const SizedBox(height: 8),
+
             Container(
               width: 300,
               child: Text(
                 'Es un gusto verte de nuevo en tu espacio de aprendizaje.',
-                style: GoogleFonts.dmSans(color: Colors.black, fontSize: 16),
+                style: textTheme.bodyMedium,
                 textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(height: 24),
 
-            // Username TextField
             AppTextField(
               hintText: 'Username, Email or Phone Number',
             ),
             const SizedBox(height: 16),
 
-            // Password TextField
             AppTextField(
               hintText: 'Password',
               obscureText: true,
-              // controller: _passwordController,
             ),
             const SizedBox(height: 8),
 
-            // Forgot Password
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12),
               child: Align(
@@ -69,21 +62,22 @@ class _LoginPageState extends State<LoginPage> {
                   onTap: () {},
                   child: Text(
                     'Forgot Password ?',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.w600),
+                    style: textTheme.bodySmall?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ),
             ),
             const SizedBox(height: 24),
 
-            // Sign In Button
             MainButton(
               text: "Sign In",
               navigateTo: AppNavbar(),
             ),
             const SizedBox(height: 24),
-            // Sign up with divider
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -91,82 +85,86 @@ class _LoginPageState extends State<LoginPage> {
                   height: 3,
                   width: 100,
                   decoration: BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image:
-                              AssetImage("assets/material/login_divider.png"))),
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage("assets/material/login_divider.png"),
+                    ),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   child: Text(
                     'Or Sign up With',
-                    style: TextStyle(color: Colors.grey[700]),
+                    style: textTheme.bodySmall?.copyWith(
+                      color: Colors.grey[700],
+                    ),
                   ),
                 ),
                 Transform.flip(
-                    flipX: true,
-                    child: Container(
-                      height: 3,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage(
-                                  "assets/material/login_divider.png"))),
-                    )),
+                  flipX: true,
+                  child: Container(
+                    height: 3,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("assets/material/login_divider.png"),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 30),
 
-            // Social Sign In Buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
                   style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(
-                          const Color.fromARGB(255, 235, 233, 236))
-                      // backgroundColor: Colors.grey
-                      ),
+                    backgroundColor: MaterialStateProperty.all(
+                      const Color.fromARGB(255, 235, 233, 236),
+                    ),
+                  ),
                   icon: Image.asset(
                     'assets/externals/google.png',
                     height: 25,
                   ),
                   iconSize: 40,
                   onPressed: () {
-                    // Handle Google sign in
+                    
                   },
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 IconButton(
                   style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(
-                          const Color.fromARGB(255, 235, 233, 236))
-                      // backgroundColor: Colors.grey
-                      ),
+                    backgroundColor: MaterialStateProperty.all(
+                      const Color.fromARGB(255, 235, 233, 236),
+                    ),
+                  ),
                   icon: Image.asset(
                     'assets/externals/facebook.png',
                     height: 25,
                   ),
                   iconSize: 40,
                   onPressed: () {
-                    // Handle Facebook sign in
+                    
                   },
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 IconButton(
                   style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(
-                          const Color.fromARGB(255, 235, 233, 236))
-                      // backgroundColor: Colors.grey
-                      ),
+                    backgroundColor: MaterialStateProperty.all(
+                      const Color.fromARGB(255, 235, 233, 236),
+                    ),
+                  ),
                   icon: Image.asset(
                     'assets/externals/apple.png',
                     height: 25,
                   ),
                   iconSize: 40,
                   onPressed: () {
-                    // Handle Apple sign in
+                    
                   },
                 ),
               ],

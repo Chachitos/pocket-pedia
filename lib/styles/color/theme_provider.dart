@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pocketpedia/styles/dark_theme.dart';
-import 'package:pocketpedia/styles/light_theme.dart';
+import 'package:pocketpedia/styles/color/dark_theme.dart';
+import 'package:pocketpedia/styles/color/light_theme.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeData _themeData = lightTheme;

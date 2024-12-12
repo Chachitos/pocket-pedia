@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pocketpedia/widgets/material/homepage/categories.dart';
+import 'package:pocketpedia/widgets/material/homepage/news_card.dart';
 import 'package:pocketpedia/widgets/material/homepage/recents.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,7 +40,18 @@ class HomePage extends StatelessWidget {
           RecentsStack(
             ilness: 'Bronquiolitis',
             percentage: 40,
-          )
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          NewsCard(
+              imageUrl:
+                  "https://storage.googleapis.com/www-saludiario-com/wp-content/uploads/2021/10/d1b0801d-como-comunicar-las-malas-noticias-en-la-practica-medica.jpg",
+              category: "Fibrosis Quística",
+              title:
+                  "San Juan de deu administra nuevo medicamento para no se que",
+              source: "ScienceDirect",
+              date: "Octubre 18 2024")
         ],
       ),
     );
