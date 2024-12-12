@@ -1,7 +1,8 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pocketpedia/widgets/material/app_navbar.dart';
+import 'package:pocketpedia/widgets/app_navbar.dart';
+import 'package:pocketpedia/widgets/material/main_button.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -102,32 +103,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Sign In Button
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, 
-                MaterialPageRoute(builder: (context) => AppNavbar()));
-                // Handle sign in
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.secondary,
-                minimumSize:
-                    const Size(double.infinity, 50), // Full-width button
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: const Text(
-                  'Sign in',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
+            MainButton(text: "Sign In",),
             const SizedBox(height: 24),
             // Sign up with divider
             Row(
