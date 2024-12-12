@@ -10,6 +10,7 @@ class MainButton extends StatelessWidget {
   final double? borderRadius;
   final Size? minimumSize;
   final EdgeInsetsGeometry? padding;
+  final Widget? navigateTo;
 
   const MainButton({
     super.key,
@@ -22,12 +23,25 @@ class MainButton extends StatelessWidget {
     this.borderRadius,
     this.minimumSize,
     this.padding,
+    this.navigateTo,
   });
 
   @override
   Widget build(BuildContext context) {
+    if (onPressed != null && navigateTo != null) {
+      throw Exception('You cannot provide both onPressed and navigateTo parameters at the same time.');
+    }
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: () {
+        if (navigateTo != null) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => navigateTo!),
+          );
+        } else if (onPressed != null) {
+          onPressed!();
+        }
+      },
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(backgroundColor ?? Theme.of(context).colorScheme.secondary),
         minimumSize: MaterialStateProperty.all(minimumSize ?? const Size(double.infinity, 50)),

@@ -1,10 +1,17 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pocketpedia/pages/main/home_page.dart';
 import 'package:pocketpedia/widgets/app_navbar.dart';
+import 'package:pocketpedia/widgets/material/app_text_field.dart';
 import 'package:pocketpedia/widgets/material/main_button.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,44 +49,16 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Username TextField
-            TextField(
-              style: GoogleFonts.dmSans(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600),
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(18),
-                hintStyle: GoogleFonts.dmSans(
-                    color: const Color.fromARGB(255, 69, 67, 67),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-                hintText: 'Username, Email or Phone Number',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                filled: true,
-                fillColor: Colors.grey[200],
-              ),
+            AppTextField(
+              hintText: 'Username, Email or Phone Number',
             ),
             const SizedBox(height: 16),
 
             // Password TextField
-            TextField(
-              style: GoogleFonts.dmSans(color: Colors.black, fontSize: 16),
+            AppTextField(
+              hintText: 'Password',
               obscureText: true,
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(18),
-                hintStyle: GoogleFonts.dmSans(
-                    color: const Color.fromARGB(255, 69, 67, 67),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-                hintText: 'Password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                filled: true,
-                fillColor: Colors.grey[200],
-              ),
+              // controller: _passwordController,
             ),
             const SizedBox(height: 8),
 
@@ -93,9 +72,7 @@ class LoginPage extends StatelessWidget {
                   child: Text(
                     'Forgot Password ?',
                     style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600
-                    ),
+                        color: Colors.black, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -103,7 +80,10 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Sign In Button
-            MainButton(text: "Sign In",),
+            MainButton(
+              text: "Sign In",
+              navigateTo: AppNavbar(),
+            ),
             const SizedBox(height: 24),
             // Sign up with divider
             Row(
