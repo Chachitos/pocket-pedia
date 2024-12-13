@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
               height: 150,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: [
+                children: const [
                   CategoryButton(name: 'Congénitas'),
                   CategoryButton(name: 'Alérgicas'),
                   CategoryButton(name: 'Infecciosas'),
