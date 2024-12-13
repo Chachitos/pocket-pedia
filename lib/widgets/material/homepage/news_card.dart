@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 class NewsCard extends StatelessWidget {
   final String imageUrl;
-  final String category;    // Ej: "Fibrosis Quística"
-  final String title;       // Ej: "Sant Joan de Déu administra un nuevo tratamiento..."
-  final String source;      // Ej: "ScienceDirect"
-  final String date;        // Ej: "Octubre 18 2024"
+  final String category; // Ej: "Fibrosis Quística"
+  final String
+      title; // Ej: "Sant Joan de Déu administra un nuevo tratamiento..."
+  final String source; // Ej: "ScienceDirect"
+  final String date; // Ej: "Octubre 18 2024"
 
   const NewsCard({
     Key? key,
@@ -32,7 +33,7 @@ class NewsCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               child: Image.network(
                 imageUrl,
-                width: 100,
+                width: 80,
                 height: 100,
                 fit: BoxFit.cover,
               ),
