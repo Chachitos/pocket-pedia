@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:pocketpedia/pages/main/home_page.dart';
+import 'package:pocketpedia/pages/main/library_page.dart';
 import 'package:pocketpedia/pages/main/profile_page.dart';
 
 class AppNavbar extends StatefulWidget {
@@ -19,7 +20,7 @@ class _AppNavbarState extends State<AppNavbar> {
       const HomePage(),
       const Center(child: Text("Search")),
       const Center(child: Text("Add")),
-      const Center(child: Text("Trash")),
+      const LibraryPage(),
       const ProfilePage(),
     ];
   }
