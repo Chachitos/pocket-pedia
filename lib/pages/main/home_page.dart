@@ -38,24 +38,15 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  SizedBox(
-                    height: 200,
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width,
+                        maxHeight: 180),
                     child: ListView(
-                      padding: EdgeInsets.zero,
                       scrollDirection: Axis.horizontal,
                       children: [
-                        RecentsStack(
-                          ilness:
-                              'Bronquiolitis', // Replace with dynamic values if needed
-                          percentage:
-                              40, // Replace with dynamic values if needed
-                        ),
-                        RecentsStack(
-                          ilness:
-                              'Bronquiolitis', // Replace with dynamic values if needed
-                          percentage:
-                              40, // Replace with dynamic values if needed
-                        ),
+                        RecentsStack(ilness: 'Bronquiolitis', percentage: 40),
+                        RecentsStack(ilness: 'Bronquiolitis', percentage: 40)
                       ],
                     ),
                   ),
