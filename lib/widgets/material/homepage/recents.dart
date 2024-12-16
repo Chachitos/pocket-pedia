@@ -49,80 +49,103 @@ class _RecentsStackState extends State<RecentsStack> {
   Widget build(BuildContext context) {
     //String primary_color = PColor(stylesList[widget.ilness]?['PColor']);
 
-    return SizedBox(
-      height: 150,
-      width: 220,
-      child: Stack(
-        alignment: AlignmentDirectional.bottomEnd,
-        fit: StackFit.passthrough,
-        clipBehavior: Clip.none,
-        children: [
-          MaterialButton(
-            onPressed: () {},
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            color: stylesList[widget.ilness]?['PColor'],
-            minWidth: 220,
-            height: 150,
-          ),
-          Positioned(
-            left: 80,
-            right: 0,
-            bottom: 0,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        width: 220,
+        height: 280,
+        decoration: BoxDecoration(color: Colors.grey),
+        child: GestureDetector(
+          child: SizedBox(
+            height: 230,
+            width: 220,
             child: Container(
-                height: 100,
-                width: 200,
                 decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
-                    color: stylesList[widget.ilness]?['SColor'],
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(200),
-                        bottomRight: Radius.circular(15)))),
+                    borderRadius: BorderRadius.circular(10),
+                    color: stylesList[widget.ilness]?['PColor']),
+                child: Stack(
+                  fit: StackFit.passthrough,
+                  clipBehavior: Clip.none,
+                  children: [
+                    SizedBox(
+                      height: 230,
+                      width: 220,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(10),
+                            color: stylesList[widget.ilness]?['PColor']),
+                      ),
+                    ),
+                    Positioned(
+                      left: 80,
+                      right: 0,
+                      bottom: 0,
+                      child: Container(
+                          height: 100,
+                          width: 200,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              color: stylesList[widget.ilness]?['SColor'],
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(200),
+                                  bottomRight: Radius.circular(15)))),
+                    ),
+                    Positioned(
+                        top: 18,
+                        left: 15,
+                        child: Text(
+                          widget.ilness,
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),
+                        )),
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Positioned(
+                            bottom: -30,
+                            left: 15,
+                            child: Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: stylesList[widget.ilness]?['PColor'],
+                              ),
+                            )),
+                        Positioned(
+                          left: 15,
+                          bottom: -30,
+                          child: CircularPercentIndicator(
+                            radius: 40,
+                            backgroundWidth: 8,
+                            backgroundColor: Colors.black,
+                            lineWidth: 5.0,
+                            percent: 0.4,
+                            center: new Text(
+                              "${widget.percentage.toString()}%",
+                              style: new TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15.0),
+                            ),
+                            circularStrokeCap: CircularStrokeCap.round,
+                            progressColor: stylesList[widget.ilness]?['SColor'],
+                          ),
+                        ),
+                        Positioned(
+                            right: 12,
+                            bottom: 5,
+                            child: Image(
+                              image: AssetImage(
+                                  'assets/vectors/asthma_vector.png'),
+                              width: 100,
+                            )),
+                      ],
+                    )
+                  ],
+                )),
           ),
-          Positioned(
-              top: 18,
-              left: 15,
-              child: Text(
-                widget.ilness,
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              )),
-          Positioned(
-              bottom: -30,
-              left: 15,
-              child: Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: stylesList[widget.ilness]?['PColor'],
-                ),
-              )),
-          Positioned(
-            left: 15,
-            bottom: -30,
-            child: CircularPercentIndicator(
-              radius: 40,
-              backgroundWidth: 8,
-              backgroundColor: Colors.black,
-              lineWidth: 5.0,
-              percent: 0.4,
-              center: new Text(
-                "${widget.percentage.toString()}%",
-                style:
-                    new TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
-              ),
-              circularStrokeCap: CircularStrokeCap.round,
-              progressColor: stylesList[widget.ilness]?['SColor'],
-            ),
-          ),
-          Positioned(
-              right: 12,
-              bottom: 5,
-              child: Image(
-                image: AssetImage('assets/vectors/asthma_vector.png'),
-                width: 100,
-              )),
-        ],
+        ),
       ),
     );
   }

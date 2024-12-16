@@ -38,35 +38,51 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  RecentsStack(
-                    ilness:
-                        'Bronquiolitis', // Replace with dynamic values if needed
-                    percentage: 40, // Replace with dynamic values if needed
-                  ),
                   SizedBox(
-                    height: 45,
+                    height: 200,
+                    child: ListView(
+                      padding: EdgeInsets.zero,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        RecentsStack(
+                          ilness:
+                              'Bronquiolitis', // Replace with dynamic values if needed
+                          percentage:
+                              40, // Replace with dynamic values if needed
+                        ),
+                        RecentsStack(
+                          ilness:
+                              'Bronquiolitis', // Replace with dynamic values if needed
+                          percentage:
+                              40, // Replace with dynamic values if needed
+                        ),
+                      ],
+                    ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('CATEGORÍAS',
-                          style: textTheme.labelSmall
-                              ?.copyWith(fontWeight: FontWeight.bold)),
-                      Row(
-                        children: [
-                          Text('Ver todas',
-                              style: textTheme.labelSmall
-                                  ?.copyWith(fontWeight: FontWeight.bold)),
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.arrow_forward_rounded,
-                                color: Colors.grey,
-                                size: 15,
-                              ))
-                        ],
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('CATEGORÍAS',
+                            style: textTheme.labelSmall
+                                ?.copyWith(fontWeight: FontWeight.bold)),
+                        Row(
+                          children: [
+                            Text('Ver todas',
+                                style: textTheme.labelSmall
+                                    ?.copyWith(fontWeight: FontWeight.bold)),
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.arrow_forward_rounded,
+                                  color: Colors.grey,
+                                  size: 15,
+                                ))
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 10,
