@@ -11,6 +11,8 @@ class LibraryPage extends StatefulWidget {
 class _LibraryPageState extends State<LibraryPage> {
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return SafeArea(
         child: Center(
             child: Column(
@@ -24,19 +26,38 @@ class _LibraryPageState extends State<LibraryPage> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10), color: AppColors.teal),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Stack(
                   children: [
-                    Container(
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                          color: AppColors.transparentTeal,
-                          borderRadius: BorderRadius.circular(50)),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            color: AppColors.transparentTeal,
+                            borderRadius: BorderRadius.circular(50)),
+                      ),
                     ),
 
                     //Image.asset(name)
                   ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 18.0, left: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Asma',
+                        style: textTheme.bodyMedium,
+                      ),
+                      Text('Enfermedades alérgicas',
+                          style: TextStyle(color: Colors.white, fontSize: 12))
+                    ],
+                  ),
                 )
               ],
             ),
