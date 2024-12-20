@@ -9,5 +9,5 @@ class AppColors {
   static Color transparentBlue = Color.fromRGBO(106, 108, 238, 0.737);
   static Color yellow = Color.fromARGB(255, 255, 203, 119);
   static Color white = Color.fromARGB(255, 254, 249, 239);
-  static Color red = Color.fromARGB(255, 254, 109, 115);
+  static Color red = Color.fromARGB(255, 240, 84, 89);
 }

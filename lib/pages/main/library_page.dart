@@ -11,28 +11,6 @@ class LibraryPage extends StatefulWidget {
 }
 
 class _LibraryPageState extends State<LibraryPage> {
-  Map<String, Map<String, dynamic>> stylesList = {
-    'Asma': {
-      "Path": 'assets/vectors/biblioteca/human_11847175.png',
-      "PColor": AppColors.red,
-      "SColor": AppColors.transparentRed,
-    },
-    'Fibrosis Quística': {
-      "Path": 'assets/vectors/biblioteca/human_11061092.png',
-      "PColor": AppColors.oceanBlue,
-      "SColor": AppColors.transparentBlue,
-    },
-    'Influenza': {
-      "Path": 'assets/vectors/biblioteca/stroke_11916674.png',
-      "PColor": AppColors.yellow,
-      "SColor": AppColors.transparentYellow,
-    },
-    'Tos crónica': {
-      "Path": ' assets/vectors/biblioteca/tissue_11916635.png',
-      "PColor": AppColors.teal,
-      "SColor": AppColors.transparentTeal,
-    }
-  };
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -40,7 +18,12 @@ class _LibraryPageState extends State<LibraryPage> {
     return SafeArea(
         child: Center(
             child: Column(
-      children: [Text('Biblioteca'), FavoritesLibraryState()],
+      children: [
+        Text('Biblioteca'),
+        FavoritesLibraryState(
+          ilness: 'Asma',
+        )
+      ],
     )));
   }
 }

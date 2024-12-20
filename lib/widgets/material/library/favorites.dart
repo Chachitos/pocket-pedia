@@ -2,14 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:pocketpedia/styles/color/app_colors.dart';
 
-class _FavoritesLibraryState extends StatefulWidget {
-  const _FavoritesLibraryState({super.key});
+class FavoritesLibraryState extends StatefulWidget {
+  final String ilness;
+  const FavoritesLibraryState({super.key, required this.ilness});
 
   @override
-  State<_FavoritesLibraryState> createState() => __FavoritesLibraryStateState();
+  State<FavoritesLibraryState> createState() => _FavoritesLibraryStateState();
 }
 
-class __FavoritesLibraryStateState extends State<_FavoritesLibraryState> {
+class _FavoritesLibraryStateState extends State<FavoritesLibraryState> {
+  Map<String, Map<String, dynamic>> stylesList = {
+    'Asma': {
+      "Path": 'assets/vectors/biblioteca/human_11847175.png',
+      "PColor": AppColors.red,
+      "SColor": AppColors.transparentRed,
+    },
+    'Fibrosis Quística': {
+      "Path": 'assets/vectors/biblioteca/human_11061092.png',
+      "PColor": AppColors.oceanBlue,
+      "SColor": AppColors.transparentBlue,
+    },
+    'Influenza': {
+      "Path": 'assets/vectors/biblioteca/stroke_11916674.png',
+      "PColor": AppColors.yellow,
+      "SColor": AppColors.transparentYellow,
+    },
+    'Tos crónica': {
+      "Path": ' assets/vectors/biblioteca/tissue_11916635.png',
+      "PColor": AppColors.teal,
+      "SColor": AppColors.transparentTeal,
+    }
+  };
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -19,7 +43,8 @@ class __FavoritesLibraryStateState extends State<_FavoritesLibraryState> {
         height: 80,
         width: double.infinity,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15), color: AppColors.teal),
+            borderRadius: BorderRadius.circular(15),
+            color: stylesList[widget.ilness]?['PColor']),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,7 +57,7 @@ class __FavoritesLibraryStateState extends State<_FavoritesLibraryState> {
                     width: 60,
                     height: 60,
                     decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: stylesList[widget.ilness]?['SColor'],
                         borderRadius: BorderRadius.circular(50)),
                   ),
                 ),
