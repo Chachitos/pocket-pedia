@@ -16,20 +16,24 @@ class _LibraryPageState extends State<LibraryPage> {
     final textTheme = Theme.of(context).textTheme;
 
     return SafeArea(
-        child: Center(
-            child: Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 60),
-          child: Text(
-            'Biblioteca',
-            style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+        child: DefaultTabController(
+      length: 2,
+      child: Center(
+          child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 60),
+            child: Text(
+              'Biblioteca',
+              style:
+                  textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+            ),
           ),
-        ),
-        FavoritesLibraryState(
-          ilness: 'Asma',
-        )
-      ],
-    )));
+          FavoritesLibraryState(
+            ilness: 'Asma',
+          )
+        ],
+      )),
+    ));
   }
 }
