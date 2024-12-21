@@ -19,7 +19,13 @@ class _LibraryPageState extends State<LibraryPage> {
         child: Center(
             child: Column(
       children: [
-        Text('Biblioteca'),
+        Padding(
+          padding: const EdgeInsets.only(top: 60),
+          child: Text(
+            'Biblioteca',
+            style: textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+          ),
+        ),
         FavoritesLibraryState(
           ilness: 'Asma',
         )
